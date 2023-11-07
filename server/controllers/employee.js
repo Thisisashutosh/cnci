@@ -2,11 +2,11 @@ import Employee from "../models/Employee.js";
 
 export const upload = async (req, res) => {
   try {
-     // Query the database to get the total count of Employee documents
-     const totalEmployees = await Employee.countDocuments();
+    // Query the database to get the total count of Employee documents
+    const totalEmployees = await Employee.countDocuments();
 
-     // Calculate the report number
-     const reportNumber = `E${(totalEmployees + 1).toString().padStart(9, "0")}`;
+    // Calculate the report number
+    const reportNumber = `E${(totalEmployees + 1).toString().padStart(9, "0")}`;
 
     const newPost = new Employee({
       ...req.body,
@@ -15,9 +15,11 @@ export const upload = async (req, res) => {
     });
 
     await newPost.save();
-    res
-      .status(200)
-      .json({ status: "success", message: "Bill submitted successfully", reportNumber });
+    res.status(200).json({ 
+      status: "success",
+      message: "Bill submitted successfully",
+      reportNumber,
+    });
   } catch (error) {
     res.status(409).json({ status: "error", message: "Something went wrong" });
   }

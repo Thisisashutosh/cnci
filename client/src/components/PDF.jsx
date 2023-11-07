@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: "row",
-    borderBottom: "1pt solid #000",
+    // borderBottom: "1pt solid #000",
   },
   cell: {
     flex: 1,
@@ -213,11 +213,11 @@ const PDFDocument = ({ data }) => {
 
           {selection === "Permanent" ? (
             <View style={styles.table}>
-              <View style={styles.row}>
-                <View style={styles.cell}>
+              <View style={{ ...styles.row, borderBottom: "1pt solid #000" }}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Fee Type</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Amount</Text>
                 </View>
                 <View style={styles.cell}>
@@ -225,13 +225,13 @@ const PDFDocument = ({ data }) => {
                 </View>
               </View>
               <View style={styles.row}>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Electricity Fees</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>INR {extraData[0]}</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderBottom: 0 }}>
                   <Text>{remarks}</Text>
                 </View>
               </View>
@@ -242,11 +242,11 @@ const PDFDocument = ({ data }) => {
 
           {selection != "Permanent" ? (
             <View style={styles.table}>
-              <View style={styles.row}>
-                <View style={styles.cell}>
+              <View style={{ ...styles.row, borderBottom: "1pt solid #000" }}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Fee Type</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Amount</Text>
                 </View>
                 <View style={styles.cell}>
@@ -254,30 +254,36 @@ const PDFDocument = ({ data }) => {
                 </View>
               </View>
               <View style={styles.row}>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Liscence Fees</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>INR {extraData[0]}</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderBottom: 0 }}>
                   <Text>{remarks}</Text>
                 </View>
               </View>
               <View style={styles.row}>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Electricity Fees</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>INR {extraData[1]}</Text>
+                </View>
+                <View style={{ ...styles.cell, borderBottom: 0 }}>
+                  <Text></Text>
                 </View>
               </View>
               <View style={styles.row}>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>Others</Text>
                 </View>
-                <View style={styles.cell}>
+                <View style={{ ...styles.cell, borderRight: 2 }}>
                   <Text>INR {extraData[2]}</Text>
+                </View>
+                <View style={styles.cell}>
+                  <Text></Text>
                 </View>
               </View>
             </View>

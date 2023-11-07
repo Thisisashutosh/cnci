@@ -19,17 +19,17 @@ const Contractual = ({ data, setData }) => {
   const generatePDF = async (data) => {
     const body = data;
     console.log(body);
-    await axios
-      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/employee/data`, body)
-      .then((res) => {
-        if (res.data.status === "error") toast.error(res.data.message);
-        else {
-          data.reportNumber = res.data.reportNumber;
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // await axios
+    //   .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/employee/data`, body)
+    //   .then((res) => {
+    //     if (res.data.status === "error") toast.error(res.data.message);
+    //     else {
+    //       data.reportNumber = res.data.reportNumber;
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
     import("@react-pdf/renderer").then((module) => {
       const { PDFViewer, PDFDownloadLink } = module;
