@@ -136,7 +136,7 @@ const PDFDocument = ({ data }) => {
           <View style={styles.companyInfo}>
             {/* Logo */}
             {imageData && (
-              <Image src="../../public/logo.png" style={styles.logo} />
+              <Image src="../../logo.png" style={styles.logo} />
             )}
 
             {/* Company Name */}
