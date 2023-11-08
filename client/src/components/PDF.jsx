@@ -104,7 +104,7 @@ const PDFDocument = ({ data }) => {
   } = {
     ...displayData,
   };
-  const imageUrl = "../../public/logo.png";
+  const imageUrl = "../../logo.png";
 
   const [imageData, setImageData] = useState(null);
 
