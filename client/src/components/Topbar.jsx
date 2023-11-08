@@ -16,7 +16,7 @@ const Topbar = () => {
     <nav className="sticky top-0 w-full container shadow-sm bg-opacity-30 bg-clip-padding backdrop-filter backdrop-blur-lg border-gray-200">
       <div className="relative max-w-screen-2xl flex items-center justify-between px-5 py-1 mx-auto">
         <div className="flex items-center justify-center gap-2">
-          <img className="w-16" src="../../public/logo.png" alt="cnci logo" />
+          <img className="w-16" src="../../logo.png" alt="cnci logo" />
           <div className="">
             <ul className="flex items-center font-medium tracking-tight lg:space-x-5 text-md">
               {Links.map((link, index) => (
